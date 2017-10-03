@@ -43,8 +43,7 @@ exports.convertHTMLString = function (html, pdfPath, callback) {
 };
 
 exports.convertHTMLFile = function (htmlPath, pdfPath, callback) {
-
-    var args = ['-jar', __dirname.replace("app.asar", "app.asar.unpacked") + '/PDFRenderer.jar'];
+    var args = ['-jar', __dirname.replace("app.asar", "app.asar.unpacked") + '/target/html-to-pdf-1.0-SNAPSHOT.jar'];
     if (inputEncoding !== null) {
         args.push('--input-encoding', inputEncoding);
     }

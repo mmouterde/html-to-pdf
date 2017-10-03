@@ -1,6 +1,6 @@
 {
   "name": "html-to-pdf",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "description": "A Node HTML to PDF converter using a the Java flyingsaucer library.",
   "main": "html-to-pdf.js",
   "directories": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChaosEvoker/html-to-pdf.git"
+    "url": "https://github.com/mmouterde/html-to-pdf.git"
   },
   "keywords": [
     "node",
@@ -26,9 +26,9 @@
   "author": "Phillip Sipe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ChaosEvoker/html-to-pdf/issues"
+    "url": "https://github.com/mmouterde/html-to-pdf/issues"
   },
-  "homepage": "https://github.com/ChaosEvoker/html-to-pdf",
+  "homepage": "https://github.com/mmouterde/html-to-pdf",
   "dependencies": {
     "node-uuid": "^1.4.1"
   }

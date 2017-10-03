@@ -61,7 +61,7 @@ public class PDFRenderer {
     	//Set up input file and output file for cleaning up the HTML
         InputStream is = new FileInputStream(inputFile);
         UUID uniqueID = UUID.randomUUID();
-        String cleanHTMLFile = uniqueID.toString() + ".html";
+        String cleanHTMLFile = System.getProperty("java.io.tmpdir")+"/"+uniqueID.toString() + ".html";
         OutputStream os = new FileOutputStream(cleanHTMLFile);
 
         //Clean the HTML
