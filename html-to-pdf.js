@@ -1,5 +1,7 @@
 var child_process = require('child_process'),
     fs = require('fs'),
+    os = require('os'),
+    path = require('path'),
     UUIDGenerator = require('node-uuid'),
     debug = false,
     inputEncoding = null,
@@ -9,16 +11,16 @@ exports.setDebug = function (newDebug) {
     debug = newDebug;
 };
 
-exports.setInputEncoding = function(enc) {
+exports.setInputEncoding = function (enc) {
     inputEncoding = enc;
 }
 
-exports.setOutputEncoding = function(enc) {
+exports.setOutputEncoding = function (enc) {
     outputEncoding = enc;
 }
 
 exports.convertHTMLString = function (html, pdfPath, callback) {
-    var self = this, uniqueID = UUIDGenerator.v4();
+    var self = this, uniqueID = path.join(os.tmpdir(), UUIDGenerator.v4());
     fs.writeFile(uniqueID + '.html', html, function (err) {
         if (err) {
             callback(err)
@@ -41,6 +43,7 @@ exports.convertHTMLString = function (html, pdfPath, callback) {
 };
 
 exports.convertHTMLFile = function (htmlPath, pdfPath, callback) {
+
     var args = ['-jar', __dirname + '/PDFRenderer.jar'];
     if (inputEncoding !== null) {
         args.push('--input-encoding', inputEncoding);
@@ -62,6 +65,6 @@ exports.convertHTMLFile = function (htmlPath, pdfPath, callback) {
         });
     }
     renderer.on('exit', function (code) {
-        callback(null, {process_code: code});
+        callback(null, { process_code: code });
     });
 };
