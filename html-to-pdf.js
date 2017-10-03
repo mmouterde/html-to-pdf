@@ -44,7 +44,7 @@ exports.convertHTMLString = function (html, pdfPath, callback) {
 
 exports.convertHTMLFile = function (htmlPath, pdfPath, callback) {
 
-    var args = ['-jar', __dirname + '/PDFRenderer.jar'];
+    var args = ['-jar', __dirname.replace("app.asar", "app.asar.unpacked") + '/PDFRenderer.jar'];
     if (inputEncoding !== null) {
         args.push('--input-encoding', inputEncoding);
     }
