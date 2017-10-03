@@ -9,4 +9,4 @@ npm-debug.log
 .idea
 *.iml
 target
-!/target/html-to-pdf-1.0-SNAPSHOT.jar
+!/target/html-to-pdf-1.0-SNAPSHOT-jar-with-dependencies.jar
